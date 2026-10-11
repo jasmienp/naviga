@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#F8FAFF</color>
+    <color name="text_bold">#07154F</color>
+    <color name="text_subtitle">#6673A8</color>
+    <color name="search_logo">#5D6DA9</color>
+    <color name="search_text">#8A95BD</color>
+    <color name="main_blue">#001196</color>
+    <color name="text_light">#52629D</color>
+    <color name="border_light">#DFE4F5</color>
+    <color name="destination_background">#E8EDFF</color>
+    <color name="text_medium">#7582AE</color>
+</resources>

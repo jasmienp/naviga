@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NAVIGA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+    </style>
+
+    <!-- Updated Material 3 compatible style -->
+    <style name="CustomSearchViewText">
+        <item name="android:textSize">16sp</item>
+        <item name="colorControlNormal">@color/search_logo</item>
+        <item name="android:fontFamily">@font/dm_sans</item>
+        <item name="android:textColor">@color/search_text</item>
+        <item name="android:textColorHint">@color/search_text</item>
+        <!-- You can also add text color or hint color here if needed -->
+        <!-- <item name="android:textColor">@color/black</item> -->
+    </style>
+
+    <style name="Theme.NAVIGA" parent="Base.Theme.NAVIGA" />
+</resources>
