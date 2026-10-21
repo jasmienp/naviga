@@ -38,4 +38,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    implementation("com.github.chrisbanes:PhotoView:2.3.0")
 }
