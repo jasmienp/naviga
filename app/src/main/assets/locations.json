@@ -1,0 +1,16 @@
+[
+  {"id":"backfield","name":"Backfield","category":"Academic","description":"TODO: what this area is used for","sprite":"backfield","left":537,"top":225,"photo":"photo_backfield"},
+  {"id":"jmrh","name":"JMRH","category":"Academic","description":"TODO: what is inside this building","sprite":"jmrh_build","left":305,"top":229,"photo":"photo_jmrh"},
+  {"id":"jesuits","name":"Jesuit Residence","category":"Academic","description":"TODO: what is inside this building","sprite":"jesuits_build","left":342,"top":461,"photo":"photo_jesuits"},
+  {"id":"fec","name":"Learning Resource Center","category":"Study","description":"TODO: what is inside this building","sprite":"fec_build","left":208,"top":979,"photo":"photo_lrc"},
+  {"id":"c","name":"Canisius & Gonzaga Bldg.","category":"Academic","description":"TODO: what is inside this building","sprite":"c_build","left":677,"top":956,"photo":"photo_canisius_gonzaga"},
+  {"id":"bc","name":"Bellarmine & Campion Bldg.","category":"Academic","description":"TODO: what is inside this building","sprite":"bc_build","left":668,"top":1442,"photo":"photo_bellarmine_campion"},
+  {"id":"church","name":"University Church of Sacred Heart","category":"Academic","description":"TODO: what this building is used for","sprite":"church","left":308,"top":1469,"photo":"photo_church"},
+  {"id":"xh","name":"Xavier Hall","category":"Academic","description":"TODO: what is inside this building","sprite":"xh_build","left":623,"top":846,"photo":"photo_xavier"},
+  {"id":"sauras","name":"Sauras Hall","category":"Academic","description":"TODO: what is inside this building","sprite":"sauras_build","left":970,"top":875,"photo":"photo_sauras"},
+  {"id":"mpcc1","name":"MPCC-1","category":"Academic","description":"TODO: what is inside this building","sprite":"mpcc1","left":1189,"top":462,"photo":"photo_mpcc1"},
+  {"id":"mpcc2","name":"MPCC-2","category":"Academic","description":"TODO: what is inside this building","sprite":"mpcc2","left":1043,"top":1009,"photo":"photo_mpcc2"},
+  {"id":"kostka","name":"Kostka Bldg.","category":"Academic","description":"TODO: what is inside this building","sprite":"kostka_build","left":1326,"top":905,"photo":"photo_kostka"},
+  {"id":"fws","name":"FWS Building","category":"Academic","description":"TODO: what is inside this building","sprite":"fws_build","left":1210,"top":1217,"photo":"photo_fws"},
+  {"id":"pps","name":"Physical Plant Shop","category":"Academic","description":"TODO: what this building is used for","sprite":"ppo_build","left":1192,"top":311,"photo":"photo_physical_plant"}
+]
