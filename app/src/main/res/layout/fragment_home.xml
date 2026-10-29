@@ -85,7 +85,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/searchView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -97,7 +101,7 @@
                 android:textSize="12sp"
                 app:backgroundTint="@color/main_blue"
                 app:icon="@drawable/all_icon"
-                app:rippleColor="#E0E5F5" />
+                app:rippleColor="#E0E5F5" />/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -112,7 +116,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Academic"
                 app:icon="@drawable/academic_icon"
-                app:rippleColor="#E0E5F5" />
+                app:rippleColor="#E0E5F5" />/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -127,7 +131,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Study"
                 app:icon="@drawable/study_icon"
-                app:rippleColor="#E0E5F5" />
+                app:rippleColor="#E0E5F5" />/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
@@ -142,7 +146,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Food"
                 app:icon="@drawable/food_icon"
-                app:rippleColor="#E0E5F5" />
+                app:rippleColor="#E0E5F5" />/>
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -163,80 +167,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.example.naviga.CampusMapView
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Salvador Campus map" />
-
-        <!-- Turn-by-turn instruction banner (shown while navigating) -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/instructionBanner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_margin="12dp"
-            android:visibility="gone"
-            app:cardBackgroundColor="@color/main_blue"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:strokeWidth="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="14dp">
-
-                <ImageView
-                    android:id="@+id/bannerArrow"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:contentDescription="Next maneuver"
-                    app:srcCompat="@drawable/ic_nav_arrow"
-                    app:tint="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/bannerPrimary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/dm_sans_bold"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/bannerSecondary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/dm_sans_medium"
-                        android:textColor="@color/white"
-                        android:alpha="0.85"
-                        android:textSize="12sp" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Re-lock the camera onto the user after panning the map -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/recenterButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="12dp"
-            android:contentDescription="Recenter on my location"
-            android:visibility="gone"
-            app:backgroundTint="@color/white"
-            app:fabSize="mini"
-            app:srcCompat="@drawable/ic_recenter"
-            app:tint="@color/main_blue" />
+            android:contentDescription="Salvador Campus map"
+            android:scaleType="fitCenter"
+            android:src="@drawable/map" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -266,42 +203,34 @@
                 android:layout_height="40dp"
                 android:background="@drawable/destination_circle"
                 android:padding="8dp"
-                app:tint="@color/main_blue"
-                app:srcCompat="@drawable/study_icon" />
+                android:tint="@color/main_blue"
+                app:srcCompat="@drawable/study_icon"/>
 
-            <!-- Tap to pick a different destination -->
             <LinearLayout
-                android:id="@+id/destinationInfo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginStart="12dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true">
+                android:layout_marginStart="12dp">
 
                 <TextView
-                    android:id="@+id/destinationTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Main Library"
                     android:fontFamily="@font/dm_sans_bold"
                     android:textColor="@color/text_bold"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"/>
 
                 <TextView
-                    android:id="@+id/destinationSubtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Finding your location…"
+                    android:text="4 min walk · Floor 1"
                     android:fontFamily="@font/dm_sans_medium"
                     android:textColor="@color/text_medium"
                     android:textSize="11sp" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/goButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:text="Go"
@@ -311,7 +240,7 @@
                 app:cornerRadius="12dp"
                 app:backgroundTint="@color/main_blue"
                 app:icon="@drawable/destination_icon"
-                app:iconPadding="6dp" />
+                app:iconPadding="6dp"/>
 
         </LinearLayout>
 
