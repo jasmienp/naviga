@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -24,6 +25,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var destCard: View
     private lateinit var adapter: ResultsAdapter
     private lateinit var buttons: List<MaterialButton>
+
+    private lateinit var btnZoomIn: FloatingActionButton
+
+    private lateinit var btnZoomOut: FloatingActionButton
 
     private var query = ""
     private var category = "All"
@@ -37,6 +42,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         overlay = view.findViewById(R.id.buildingOverlay)
         resultsCard = view.findViewById(R.id.resultsCard)
         destCard = view.findViewById(R.id.destinationCard)
+        btnZoomIn = view.findViewById(R.id.btnZoomIn)
+        btnZoomOut = view.findViewById(R.id.btnZoomOut)
+
+        btnZoomIn.setOnClickListener {
+            zoomIn()
+        }
+
+        btnZoomOut.setOnClickListener {
+            zoomOut()
+        }
 
         // real pixel size of map.jpg (cutout positions are in these units)
         val opts = BitmapFactory.Options().apply { inJustDecodeBounds = true; inScaled = false }
@@ -81,7 +96,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             })
 
         // category filters
-        buttons = listOf(R.id.btnAll, R.id.btnAcademic, R.id.btnStudy, R.id.btnFood)
+        buttons = listOf(R.id.btnAll, R.id.btnAcademic, R.id.btnStudy, R.id.btnFood, R.id.btnService, R.id.btnRecreation)
             .map { view.findViewById<MaterialButton>(it) }
         buttons.forEach { b ->
             b.setOnClickListener {
@@ -151,6 +166,34 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun hideResults() {
         resultsCard.visibility = View.GONE
         requireView().findViewById<SearchView>(R.id.searchView).clearFocus()
+    }
+
+    private fun zoomIn() {
+        val currentScale = map.scale
+
+        val newScale = (currentScale * 1.25f)
+            .coerceAtMost(map.maximumScale)
+
+        map.setScale(
+            newScale,
+            map.width / 2f,
+            map.height / 2f,
+            true
+        )
+    }
+
+    private fun zoomOut() {
+        val currentScale = map.scale
+
+        val newScale = (currentScale * 0.8f)
+            .coerceAtLeast(map.minimumScale)
+
+        map.setScale(
+            newScale,
+            map.width / 2f,
+            map.height / 2f,
+            true
+        )
     }
 
     private fun styleButtons(active: MaterialButton) {

@@ -43,16 +43,6 @@
         app:layout_constraintStart_toEndOf="@id/imageView"
         app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!-- Search Section -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -102,7 +92,7 @@
                 android:textSize="12sp"
                 app:backgroundTint="@color/main_blue"
                 app:icon="@drawable/all_icon"
-                app:rippleColor="#E0E5F5" />/>
+                app:rippleColor="#E0E5F5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAcademic"
@@ -118,7 +108,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Academic"
                 app:icon="@drawable/academic_icon"
-                app:rippleColor="#E0E5F5" />/>
+                app:rippleColor="#E0E5F5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnStudy"
@@ -134,7 +124,7 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Study"
                 app:icon="@drawable/study_icon"
-                app:rippleColor="#E0E5F5" />/>
+                app:rippleColor="#E0E5F5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFood"
@@ -150,6 +140,39 @@
                 android:fontFamily="@font/dm_sans"
                 android:text="Food"
                 app:icon="@drawable/food_icon"
+                app:rippleColor="#E0E5F5" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnService"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                app:backgroundTint="@color/white"
+                android:textColor="@color/text_light"
+                app:iconTint="@color/text_light"
+                app:strokeColor="@color/border_light"
+                app:strokeWidth="1.12dp"
+                android:textSize="12sp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Service"
+                app:icon="@drawable/service_icon"
+                app:rippleColor="#E0E5F5" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRecreation"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                app:backgroundTint="@color/white"
+                android:textColor="@color/text_light"
+                app:iconTint="@color/text_light"
+                app:strokeColor="@color/border_light"
+                app:strokeWidth="1.12dp"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Recreation"
+                app:icon="@drawable/recreation_icon"
                 app:rippleColor="#E0E5F5" />/>
 
         </LinearLayout>
@@ -171,17 +194,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/mapView"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="Salvador Campus map"
-            android:scaleType="fitCenter"
-            android:src="@drawable/map" />
-        <com.example.naviga.BuildingOverlayView
-            android:id="@+id/buildingOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <com.github.chrisbanes.photoview.PhotoView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Salvador Campus map"
+                android:scaleType="fitCenter"
+                android:src="@drawable/map" />
+
+            <com.example.naviga.BuildingOverlayView
+                android:id="@+id/buildingOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Zoom In -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnZoomIn"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="80dp"
+                android:contentDescription="Zoom In"
+                app:backgroundTint="@color/main_blue"
+                app:srcCompat="@drawable/ic_add"
+                app:tint="@android:color/white"
+                app:maxImageSize="24dp" />
+
+            <!-- Zoom Out -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnZoomOut"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Zoom Out"
+                app:backgroundTint="@color/main_blue"
+                app:tint="@color/white"
+                app:srcCompat="@drawable/ic_remove"
+                app:maxImageSize="20dp" />
+
+        </FrameLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
