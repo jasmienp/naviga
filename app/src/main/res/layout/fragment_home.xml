@@ -136,12 +136,11 @@
                 app:strokeColor="@color/border_light"
                 app:strokeWidth="1.12dp"
                 android:textSize="12sp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="4dp"
                 android:fontFamily="@font/dm_sans"
                 android:text="Food"
                 app:icon="@drawable/food_icon"
                 app:rippleColor="#E0E5F5" />
-
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnService"
@@ -169,7 +168,7 @@
                 app:strokeColor="@color/border_light"
                 app:strokeWidth="1.12dp"
                 android:textSize="12sp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="4dp"
                 android:fontFamily="@font/dm_sans"
                 android:text="Recreation"
                 app:icon="@drawable/recreation_icon"
